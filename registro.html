@@ -73,6 +73,7 @@
 							id="nombre"
 							name="nombre"
 							placeholder="Tu Nombre"
+							required
 						/>
 					</div>
 					<div class="campo">
@@ -82,6 +83,7 @@
 							id="apellido"
 							name="apellido"
 							placeholder="Tu Apellido"
+							required
 						/>
 					</div>
 
@@ -92,10 +94,11 @@
 							id="email"
 							name="email"
 							placeholder="Tu Email"
+							required
 						/>
 					</div>
+					<div id="error"></div>
 				</div>
-				<div id="error"></div>
 
 				<div id="paquetes" class="paquetes">
 					<h3>Elige el numero de tickets:</h3>
@@ -122,6 +125,7 @@
 												id="pase_dia"
 												size="3"
 												placeholder="0"
+												value="0"
 											/>
 										</div>
 									</div>
@@ -146,6 +150,7 @@
 												id="pase_completo"
 												size="3"
 												placeholder="0"
+												value="0"
 											/>
 										</div>
 									</div>
@@ -170,6 +175,7 @@
 												id="pase_2dias"
 												size="3"
 												placeholder="0"
+												value="0"
 											/>
 										</div>
 									</div>
@@ -539,7 +545,9 @@
 						</div>
 						<div class="total">
 							<p>Resumen</p>
-							<div id="lista-productos">Nada seleccionado | Pulsar <b>Calcular</b></div>
+							<div id="lista-productos">
+								Nada seleccionado | Pulsar <b>Calcular</b>
+							</div>
 							<div class="totalPrecio">
 								<p>Total:</p>
 								<div id="suma-total"></div>
