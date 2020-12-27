@@ -374,6 +374,54 @@ ul {
 	margin: 0;
 	padding: 0;
 }
+
+/* LETTERING */
+h1.nombre-sitio span {
+	position: relative;
+	text-shadow: 0 0 30px black;
+}
+@media (min-width: 992px) {
+	.char1 {
+		top: 20px;
+		right: 20px;
+	}
+	.char2 {
+		top: 0px;
+		left: -20px;
+	}
+	.char3 {
+		top: 10px;
+		right: 20px;
+	}
+	.char4 {
+		top: 5px;
+		right: 10px;
+	}
+	.char5 {
+		top: 15px;
+		right: 10px;
+	}
+	.char6 {
+		top: 5px;
+		left: 10px;
+	}
+	.char7 {
+		top: 20px;
+		left: -10px;
+	}
+	.char8 {
+		top: 5px;
+		left: -5px;
+	}
+	.char9 {
+		top: 10px;
+		right: 20px;
+	}
+	.char10 {
+		top: 20px;
+		right: 20px;
+	}
+}
 /* HEADER */
 
 .hero {
@@ -456,6 +504,13 @@ h1.nombre-sitio {
 	background: #353535;
 	padding: 20px 0;
 }
+.fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
 .logo {
 	width: 80%;
 	float: left;
@@ -467,10 +522,10 @@ h1.nombre-sitio {
 /** NAV PRINCIPIAL **/
 .navegacion-principal {
 	display: none;
-}
-.navegacion-principal a:first-child {
+	width: 100%;
 	margin-top: 5rem;
 }
+
 .navegacion-principal a {
 	color: white;
 	font-family: "Oswald", sans-serif;
@@ -496,6 +551,8 @@ h1.nombre-sitio {
 }
 @media (min-width: 768px) {
 	.navegacion-principal {
+		display: block !important;
+		margin-top: 0;
 		width: 70%;
 		display: block;
 		float: right;
@@ -522,31 +579,31 @@ h1.nombre-sitio {
 
 /** MENU MOVIL **/
 div.menu-movil {
-    width: 60px;
-    display: block;
-    float: right;
-    text-align: right;
-    margin-top: 12px;
+	width: 60px;
+	display: block;
+	float: right;
+	text-align: right;
+	margin-top: 12px;
 }
 
 div.menu-movil:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
-    div.menu-movil {
-        display: none;
+	div.menu-movil {
+		display: none;
 	}
-	.contenedor .menu-movil{
+	.contenedor .menu-movil {
 		display: none;
 	}
 }
 
-div.menu-movil span{
-    height: 8px;
-    margin-bottom: 6px;
-    background-color: white;
-    display: block; 
+div.menu-movil span {
+	height: 8px;
+	margin-bottom: 6px;
+	background-color: white;
+	display: block;
 }
 /** TALLERES **/
 
@@ -585,8 +642,6 @@ section.programa {
 
 nav.menu-programa {
 	width: 100%;
-	border-bottom: 1px solid #fe4918;
-	padding-bottom: 10px;
 }
 @media (min-width: 768px) {
 	nav.menu-programa {
@@ -601,6 +656,27 @@ nav.menu-programa a {
 	font-family: "Oswald", sans-serif;
 	margin-bottom: 10px;
 	font-size: 1.2em;
+	position: relative;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fe4918;
+}
+.ocultar {
+	display: none;
+}
+
+nav.menu-programa a.activo:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url("../img/talleres-flecha.jpg");
+	background-position: top cover;
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 30px;
+	bottom: -20px;
 }
 
 @media (min-width: 768px) {
@@ -963,22 +1039,22 @@ footer.info-testimonial cite span {
 .site-footer .contenedor div {
 	display: block;
 }
-footer h3{
+footer h3 {
 	color: white;
-	font-family: 'Oswald', sans-serif;
+	font-family: "Oswald", sans-serif;
 	text-transform: uppercase;
 }
 
-footer h3 span{
+footer h3 span {
 	color: #fe4918;
 }
-footer .ultimos-tweets{
+footer .ultimos-tweets {
 	margin-top: 10px;
 }
-footer p{
-	font-family: 'PT Sans', sans-serif;
+footer p {
+	font-family: "PT Sans", sans-serif;
 }
-footer nav.redes-sociales{
+footer nav.redes-sociales {
 	text-align: left;
 	margin-top: 10px;
 }
@@ -993,16 +1069,16 @@ footer nav.redes-sociales{
 
 	.site-footer div {
 		margin-bottom: 0;
-		padding: 10px
+		padding: 10px;
 	}
 }
 
-p.copyright{
+p.copyright {
 	background: #2e2e2e;
 	margin: 20px 0 0 0;
 	display: block;
 	text-align: center;
-	width:100%;
+	width: 100%;
 	height: 30px;
 	padding: 15px;
 	padding-bottom: 35px;
@@ -1012,110 +1088,106 @@ p.copyright{
 	left: 0;
 }
 
-
 /** INTERNAS **/
 
 /*! REGISTRO !*/
 
-form.registro h3{
+form.registro h3 {
 	text-align: center;
 	text-transform: uppercase;
 	margin: 20px 0 0 0;
 }
-form.registro label{
+form.registro label {
 	margin-bottom: 5px;
 	font-weight: bold;
 }
-h4{
+h4 {
 	text-align: center;
 	text-transform: uppercase;
 	border-bottom: 2px solid #fe4918;
 	padding-bottom: 10px;
 	font-size: 1.2em;
 }
-.caja{
+.caja {
 	background: white;
 	border: 1px solid #e1e1e1;
 	padding: 10px;
 	margin: 10px;
 }
-.campo{
+.campo {
 	padding: 20px;
-
 }
-.campo input{
+.campo input {
 	border: 1px solid #cccccc;
 }
 
 @media (min-width: 768px) {
-	.campo{
+	.campo {
 		flex-basis: 33%;
 	}
-	.caja{
+	.caja {
 		display: flex !important;
 		justify-content: space-between;
 		flex-wrap: wrap;
 	}
 }
 
-.paquetes .tabla-precio:hover{
+.paquetes .tabla-precio:hover {
 	transform: none;
 	box-shadow: none;
 }
-.paquetes .tabla-precio input{
+.paquetes .tabla-precio input {
 	width: 100px;
 	margin: 10px auto 0 auto;
 	display: block;
 }
 
-.contenido-dia{
+.contenido-dia {
 	display: none;
 	padding: 20px;
 	width: 90%;
 }
 @media (min-width: 768px) {
-	.contenido-dia > div{
+	.contenido-dia > div {
 		display: flex !important;
 		justify-content: space-between;
 		padding: 10px;
 	}
-
 }
-.contenido-dia > div p{
+.contenido-dia > div p {
 	text-align: left;
 }
-.contenido-dia > div label{
+.contenido-dia > div label {
 	display: block;
 	font-weight: normal;
 	margin-bottom: 10px;
 }
-.contenido-dia > div input{
+.contenido-dia > div input {
 	margin-right: 10px;
 }
-.contenido-dia > div label time{
+.contenido-dia > div label time {
 	color: #fe4918;
 	font-weight: bold;
 }
 
-/*! RESUMEN REGISTRO */	
+/*! RESUMEN REGISTRO */
 
-.resumen p{
+.resumen p {
 	font-size: 1.2em;
 	text-transform: uppercase;
 }
-.resumen .extras{
+.resumen .extras {
 	display: block;
 	padding: 30px;
 }
-.resumen .extras div{
+.resumen .extras div {
 	margin-bottom: 10px;
-	
 }
-.extras .orden{
+.extras .orden {
 	text-align: left;
 	margin-bottom: 20px;
 }
-.extras .orden input{
+.extras .orden input {
 	margin-left: 10px;
 	resize: horizontal;
 	display: block;
@@ -1123,26 +1195,26 @@ h4{
 	border: 2px solid rgba(0, 0, 0, 0.4);
 	text-align: left;
 }
-.orden small{
+.orden small {
 	font-weight: normal;
 }
-.resumen .total{
+.resumen .total {
 	padding: 30px;
 	width: 100%;
 }
-.extras{
+.extras {
 	width: 100%;
 }
 @media (min-width: 768px) {
-	.caja{
+	.caja {
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 	}
-	.total{
+	.total {
 		flex-basis: 50%;
 	}
-	.extras{
+	.extras {
 		flex-basis: 50%;
 	}
 }
@@ -1151,17 +1223,39 @@ h4{
 	justify-content: space-around;
 	align-items: center;
 }
-.resumen input{
+.resumen input {
 	display: block;
 	margin: 10px auto;
 }
-#lista-productos{
+#lista-productos {
 	background: #e1e1e1;
 	padding: 20px;
 	display: none;
 }
-#suma-total{
+#suma-total {
 	color: #fe4918;
 	font-size: 1.3em;
 	font-weight: bold;
+}
+
+#btnRegistro {
+	background: #e1e1e1;
+	color: rgba(0, 0, 0, 0.4);
+	border-color: #e1e1e1;
+	cursor: no-drop;
+}
+.botonDisponible {
+	background: #fe4918 !important;
+	color: white !important;
+	border-color: #fe4918 !important;
+	cursor: pointer !important;
+}
+
+/** CONFERENCIA **/
+.ConferenciaActiva {
+	border-bottom: 2px solid #fe4918;
+}
+.galeria {
+	width: 60%;
+	margin: 0 auto;
 }
